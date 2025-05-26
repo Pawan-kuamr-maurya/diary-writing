@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login or Sign up page</title>
+    <link rel="stylesheet" href="/css/loginreg.css">
+    <style>
+        /* Basic styles for visibility */
+        .visible {
+            display: block;
+        }
+        .loginblock,
+        .signup_block {
+            display: none; /* Hide both initially */
+        }
+        .loginblock.visible {
+            display: block; /* Show login block when visible class is added */
+        }
+        .signup_block.visible {
+            display: block; /* Show signup block when visible class is added */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Login Form -->
+        <form action="/user/login" method="post" id="loginForm">
+            <div class="loginblock visible"> <!-- Make login visible by default -->
+                <h2>Login</h2>
+                <input class="email" type="email" name="username" placeholder="Email" required />
+                <input name="password" class="password" type="password" placeholder="Password" required />
+                <button>Login</button>
+            </div>
+        </form>
+
+        <!-- Sign Up Form -->
+        <form action="/user/reg" method="post" id="signupForm">
+            <div class="signup_block">
+                <h2>Sign up</h2>
+                <input type="text" class="name" placeholder="Enter your name" required name="name" />
+                <input type="email" class="email" placeholder="Email" required name="username" />
+                <select name="gender" id="gender" required>
+                    <option value="">Select Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+                <input type="number" name="age" placeholder="Age" required min="1" />
+                <input type="password" class="password" placeholder="Password" required name="password" />
+                <button>Sign up</button>
+            </div>
+        </form>
+
+        
+    </div>
+    <input type="checkbox" id="toggleCheckbox" style="display: none" />
+    <label for="toggleCheckbox">Switch to Sign up</label>
+    <script>
+        const toggleCheckbox = document.getElementById("toggleCheckbox");
+        const signupBlock = document.querySelector(".signup_block");
+        const loginBlock = document.querySelector(".loginblock");
+        const label = document.querySelector("label");
+
+        toggleCheckbox.addEventListener("change", function () {
+            if (this.checked) {
+                label.innerHTML = "Switch to Login";
+                signupBlock.classList.add("visible"); // Show the signup block
+                loginBlock.classList.remove("visible"); // Hide the login block
+            } else {
+                label.innerHTML = "Switch to Sign up";
+                signupBlock.classList.remove("visible"); // Hide the signup block
+                loginBlock.classList.add("visible"); // Show the login block
+            }
+        });
+    </script>
+</body>
+</html>

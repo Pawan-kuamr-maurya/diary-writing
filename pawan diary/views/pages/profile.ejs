@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/profile.css">
+    <link rel="stylesheet" href="/css/nav.css">
+    
+</head>
+<body>
+    <%- include('../include/nav.ejs'); -%>
+    <div class="contaner">
+        <div class="userdetal">
+        
+          <% if((id2.toString() == user._id.toString())){%>
+            <div class="profile"> <img src="https://img.freepik.com/free-vector/smiling-young-man-illustration_1308-174669.jpg"  alt="" srcset=""></div>
+            <div>
+    <div class="name"><%=user.name  %></div>
+    <div class="gender"><%=user.gender  %></div>
+    <div class="age"> <%=user.age  %></div>
+    <div class="email"> <%=user.username  %></div>
+            </div>
+            <% }else{%>
+              <div class="profile"> <img src="https://img.freepik.com/free-vector/smiling-young-man-illustration_1308-174669.jpg"  alt="" srcset=""></div>
+              <div>
+      <div class="name"><%=user2.name  %></div>
+      <div class="gender"><%=user2.gender  %></div>
+      <div class="age"> <%=user2.age  %></div>
+      <div class="email"> <%=user2.username  %></div>
+              </div>
+              <% }%>
+            <% if((id2.toString() == user._id.toString())){%>
+<div style="flex-grow: 1;"> <a href="/post/like" style="justify-self: right; text-decoration: none;">LIKE PAGE</a></div>
+
+   <a href="/user/logout" style="justify-self: right; text-decoration: none;">LOG OUT</a>
+ <% }%>
+           
+    </div>
+    <div class="userpost">
+      <% sendtext.forEach(element => { %>
+        <div class="cards">
+       
+          <div class="storydetail">
+            <div class="title"><%=  element.title%></div>
+            <div class="storyline">
+          
+              <%= element.content ? element.content.substring(0, 30) : "No content available." %>.......
+            </div>
+          </div>
+
+          <div class="edit">
+  
+    
+            <a href="/post/view/<%=element._id%>" style="color: blue; background-color: aliceblue;"> VIEW </a>
+            </div>
+
+  
+  <% if(element.ownwer.toString() == user._id.toString()){%>
+    <div class="edit">
+  
+<a href="/post/edit/<%=element._id%>" style="color: blue; background-color: aliceblue;"> EDIT </a>
+  </div>
+<div class="delete">
+ 
+     
+  <a href="/post/delete/<%=element._id%>" style="color: red; background-color: aliceblue;" >DELETE</a>
+  </div>
+
+
+  <% } %>
+
+ 
+        </div>
+      <% }) %>
+       
+    </div>
+    </div>
+    
+</body>
+</html>

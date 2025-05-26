@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+      }
+
+      .nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #333;
+        padding: 15px;
+        color: white;
+        position: relative;
+      }
+
+      .nav .option ul {
+        list-style: none;
+        display: flex;
+      }
+
+      .nav .option ul li {
+        margin: 0 15px;
+        position: relative;
+      }
+
+      .logo-image {
+        height: 30px;
+        border-radius: 50%;
+      }
+      .nav .option .serch {
+        display: inline-flex;
+      }
+
+      .nav .option .serch input {
+        padding: 5px;
+        border: none;
+        border-radius: 5px 0 0 5px;
+      }
+
+      .nav .option .serch button {
+        padding: 5px;
+        background-color: #555;
+        border: none;
+        color: white;
+        cursor: pointer;
+        border-radius: 0 5px 5px 0;
+      }
+
+      .nav .clickblock {
+        display: none;
+        cursor: pointer;
+      }
+
+      .nav .colapaps {
+        display: none;
+        flex-direction: column;
+        background-color: #444;
+        position: absolute;
+        top: 60px;
+        width: 100%;
+        z-index: 100;
+      }
+
+      .nav .colapaps ul {
+        list-style: none;
+        padding: 10px;
+      }
+
+      .nav .colapaps ul li {
+        padding: 10px 0;
+      }
+
+      .left .block {
+        display: flex;
+        align-items: center;
+      }
+
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 20px;
+      }
+
+      .cards {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        margin: 10px;
+        padding: 10px;
+        background-color: white;
+        width: calc(25% - 20px);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s;
+      }
+      .userdetail {
+        display: flex;
+        justify-content: flex-start;
+        gap: 10px;
+      }
+
+      .cards:hover {
+        transform: scale(1.03);
+      }
+
+      .userlogo img {
+        width: 100%;
+        border-radius: 50%;
+      }
+
+      .footer {
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 10px;
+      }
+
+      .footer .link div {
+        display: inline-block;
+        margin: 0 10px;
+        cursor: pointer;
+      }
+
+      .footer .link div:hover {
+        color: #555;
+      }
+
+      @media (max-width: 768px) {
+        .nav .option ul,
+        .nav .colapaps ul {
+          flex-direction: column;
+        }
+        .nav .option ul li,
+        .nav .colapaps ul li {
+          margin: 10px 0;
+        }
+        .nav .clickblock {
+          display: block;
+        }
+        .nav .colapaps {
+          display: flex;
+        }
+        .cards {
+          width: 100%;
+        }
+      }
+
+      .storydetail {
+        max-width: 600px;
+        margin: 20px auto;
+        padding: 5px;
+        /* border: 1px solid #ccc; */
+        /* border-radius: 10px; */
+        /* background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+      }
+
+      .title {
+        font-family: "Roboto", sans-serif;
+        font-size: 24px;
+        font-weight: 700;
+        color: #333;
+        margin-bottom: 10px;
+      }
+
+      .storyline {
+        font-family: "Roboto", sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        color: #555;
+        line-height: 1.6;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="nav">
+      <div class="right">
+        <div class="option">
+          <ul>
+            <li>
+              <div class="logo">
+                <img class="logo-image" src="../public/321567.png" alt="" />
+              </div>
+            </li>
+            <li>home</li>
+            <li>about</li>
+            <li>contact</li>
+            <li>donate</li>
+            <li>
+              <div class="serch">
+                <input type="text" name="serch" id="serch" />
+                <button type="button">serch</button>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <!-- clickblock apear in mobile and  option are show in laptop
+    when clickblock click then colapaps apear as drop down  -->
+      </div>
+      <div class="left">
+        <div class="block">
+          <img
+            class="logo-image"
+            src="https://cdn.pixabay.com/photo/2021/11/12/03/04/woman-6787784_1280.png"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- in desktop one row  4 card and in mobile one row one card -->
+
+      <div class="cards">
+        <div class="userdetail">
+          <div class="userlogo">
+            <img
+              class="logo-image"
+              src="https://img.freepik.com/free-vector/smiling-young-man-illustration_1308-174669.jpg"
+              alt=""
+            />
+          </div>
+          <div class="username">pawan</div>
+          <div class="followers">54</div>
+          <div class="likes">67</div>
+        </div>
+        <div class="storydetail">
+          <div class="title">black shado</div>
+          <div class="storyline">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio quam
+            natus reiciendis neque alias cum placeat aperiam nemo molestias.
+            Dolorem ex vitae harum nobis incidunt amet sit a minus neque. .
+          </div>
+        </div>
+      </div>
+      <div class="cards">
+        <div class="userdetail">
+          <div class="userlogo">
+            <img
+              class="logo-image"
+              src="https://img.freepik.com/free-vector/smiling-young-man-illustration_1308-174669.jpg"
+              alt=""
+            />
+          </div>
+          <div class="username">pawan</div>
+          <div class="followers">54</div>
+          <div class="likes">67</div>
+        </div>
+        <div class="storydetail">
+          <div class="title">black shado</div>
+          <div class="storyline">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio quam
+            natus reiciendis neque alias cum placeat aperiam nemo molestias.
+            Dolorem ex vitae harum nobis incidunt amet sit a minus neque. .
+          </div>
+        </div>
+      </div>
+      <div class="cards">
+        <div class="userdetail">
+          <div class="userlogo">
+            <img
+              class="logo-image"
+              src="https://img.freepik.com/free-vector/smiling-young-man-illustration_1308-174669.jpg"
+              alt=""
+            />
+          </div>
+          <div class="username">pawan</div>
+          <div class="followers">54</div>
+          <div class="likes">67</div>
+        </div>
+        <div class="storydetail">
+          <div class="title">black shado</div>
+          <div class="storyline">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio quam
+            natus reiciendis neque alias cum placeat aperiam nemo molestias.
+            Dolorem ex vitae harum nobis incidunt amet sit a minus neque. .
+          </div>
+        </div>
+      </div>
+      <div class="cards">
+        <div class="userdetail">
+          <div class="userlogo">
+            <img
+              class="logo-image"
+              src="https://img.freepik.com/free-vector/smiling-young-man-illustration_1308-174669.jpg"
+              alt=""
+            />
+          </div>
+          <div class="username">pawan</div>
+          <div class="followers">54</div>
+          <div class="likes">67</div>
+        </div>
+        <div class="storydetail">
+          <div class="title">black shado</div>
+          <div class="storyline">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio quam
+            natus reiciendis neque alias cum placeat aperiam nemo molestias.
+            Dolorem ex vitae harum nobis incidunt amet sit a minus neque. .
+          </div>
+        </div>
+      </div>
+      <div class="cards">
+        <div class="userdetail">
+          <div class="userlogo">
+            <img
+              class="logo-image"
+              src="https://img.freepik.com/free-vector/smiling-young-man-illustration_1308-174669.jpg"
+              alt=""
+            />
+          </div>
+          <div class="username">pawan</div>
+          <div class="followers">54</div>
+          <div class="likes">67</div>
+        </div>
+        <div class="storydetail">
+          <div class="title">black shado</div>
+          <div class="storyline">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio quam
+            natus reiciendis neque alias cum placeat aperiam nemo molestias.
+            Dolorem ex vitae harum nobis incidunt amet sit a minus neque. .
+          </div>
+        </div>
+      </div>
+      <div class="cards">
+        <div class="userdetail">
+          <div class="userlogo">
+            <img
+              class="logo-image"
+              src="https://img.freepik.com/free-vector/smiling-young-man-illustration_1308-174669.jpg"
+              alt=""
+            />
+          </div>
+          <div class="username">pawan</div>
+          <div class="followers">54</div>
+          <div class="likes">67</div>
+        </div>
+        <div class="storydetail">
+          <div class="title">black shado</div>
+          <div class="storyline">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio quam
+            natus reiciendis neque alias cum placeat aperiam nemo molestias.
+            Dolorem ex vitae harum nobis incidunt amet sit a minus neque. .
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="link">
+        <div class="facebook"></div>
+        <div class="x"></div>
+        <div class="instagram"></div>
+      </div>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const clickBlock = document.querySelector(".clickblock");
+        const colapaps = document.querySelector(".colapaps");
+
+        clickBlock.addEventListener("click", function () {
+          // Toggle colapaps visibility
+          colapaps.style.display =
+            colapaps.style.display === "none" || colapaps.style.display === ""
+              ? "flex"
+              : "none";
+        });
+
+        // Close colapaps if clicking outside
+        document.addEventListener("click", function (event) {
+          if (
+            !clickBlock.contains(event.target) &&
+            !colapaps.contains(event.target)
+          ) {
+            colapaps.style.display = "none";
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

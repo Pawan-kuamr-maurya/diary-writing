@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us - Digital Diary</title>
+    <style>
+      * {
+        box-sizing: border-box; /* Include padding and border in total width and height */
+      }
+
+      html,
+      body {
+        height: 100%; /* Ensure body takes full height of the viewport */
+        margin: 0; /* Remove default margin */
+      }
+
+      body {
+        display: flex; /* Enable Flexbox */
+        flex-direction: column; /* Stack children vertically */
+        font-family: "Arial", sans-serif; /* Font for the body */
+        background-color: #f4f4f4; /* Background color */
+        color: #333; /* Text color */
+      }
+
+      header {
+        background-color: #007bff; /* Header background color */
+        color: white; /* Header text color */
+        padding: 20px; /* Padding for the header */
+        text-align: center; /* Center header text */
+      }
+
+      h1 {
+        margin: 0; /* No margin for the h1 element */
+      }
+
+      .container {
+        flex: 1; /* Allow the container to grow and fill space */
+        margin: 20px; /* Margin around the container */
+      }
+
+      .contact-info {
+        padding: 20px; /* Padding for contact info */
+        background: white; /* Background color */
+        border-radius: 8px; /* Rounded corners */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+      }
+
+      .contact-info h2 {
+        margin-top: 0; /* No top margin for h2 */
+      }
+
+      .email-link {
+        display: inline-block; /* Inline-block for link styles */
+        margin-top: 10px; /* Margin on top of the link */
+        padding: 10px 15px; /* Padding for the link */
+        background-color: #28a745; /* Background color for the link */
+        color: white; /* Text color for the link */
+        text-decoration: none; /* Remove underline */
+        border-radius: 5px; /* Border radius for rounded corners */
+        transition: background-color 0.3s; /* Transition for hover effect */
+      }
+
+      .email-link:hover {
+        background-color: #218838; /* Darker green on hover */
+      }
+
+      footer {
+        text-align: center; /* Center footer text */
+        padding: 10px; /* Padding for the footer */
+        background-color: #222; /* Footer background color */
+        color: white; /* Footer text color */
+        width: 100%; /* Full width footer */
+        margin-top: auto; /* Push footer to the bottom */
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Contact Us</h1>
+      <p>We're here to help you with any questions or issues you may have.</p>
+    </header>
+
+    <section class="contact-info">
+      <h2>Get in Touch</h2>
+      <p>
+        If you have any queries, bugs, or issues, feel free to reach out to us
+        at:
+      </p>
+      <a class="email-link" href="mailto:ak1234@gmail.com">ak1234@gmail.com</a>
+    </section>
+
+    <footer>
+      <p>&copy; 2023 Digital Diary. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

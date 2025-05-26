@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Post View</title>
+    <link rel="stylesheet" href="/css/nav.css">
+    <style>
+      body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+   
+    background-color: #f0f0f0; /* Light gray to contrast the dark nav */
+}
+
+
+
+.profile-info {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+.rightdiv{
+    
+  margin-left: auto;
+}
+
+.profile-info img {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    margin-right: 20px;
+}
+
+.profile-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.profile-bio {
+    font-size: 1rem;
+    color: #555; /* Gray color for the bio */
+}
+
+.story-description {
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.title-info {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #007bff; /* Use the same color as nav */
+}
+
+.story-content {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #333;
+}
+
+.story-content p {
+    padding: 10px; /* Adjusted padding for better readability */
+    line-height: 1.5; /* Increased line-height for better readability */
+    text-align: justify; /* Justify text for a cleaner look */
+}
+    </style>
+    <style>
+  
+  .rightdiv>button:hover{
+    background-color: gray; 
+  }
+
+      
+    </style>
+  </head>
+  <body>
+    <%- include('../include/nav.ejs'); -%>
+
+    <div class="profile-info">
+
+      <a href="/user/profile/<%= posts.ownwer._id %>">
+        <img
+        src="https://cdn.pixabay.com/photo/2021/11/12/03/04/woman-6787784_1280.png"
+        alt="Profile Image"
+      />
+      </a>
+    
+      <div>
+      <a href="/user/profile/<%= posts.ownwer._id %>" style="text-decoration: none;"   > <div class="profile-name"><%- posts.ownwer.name %></div></a>
+    
+        <div class="profile-bio">Believer in creativity and sustainability.</div>
+      </div>
+      <div class="rightdiv">
+        <button style="border: none; ">  &#129293;</button>
+       
+        &#128150;
+      </div>
+    </div>
+
+    <div class="story-description">
+      <div class="title-info"><%- posts.title %></div>
+
+      <div class="story-content">
+        <%- posts.content %>
+      </div>
+    </div>
+    
+  </body>
+
+  <script>
+document.querySelector(".rightdiv").addEventListener("click",()=>{
+  fetch("")
+  .then((response) => response.json())
+  .then((json) => console.log(json));
+  
+})
+
+  </script>
+</html>

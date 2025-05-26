@@ -1,0 +1,111 @@
+/* ./src/index.css */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  /* background-color: #f0f0f0; */
+  background-image: url("https://png.pngtree.com/thumb_back/fh260/background/20230512/pngtree-open-diary-with-fountain-pen-image_2506780.jpg");
+  background-size: cover;
+  /* background-position: center; */
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+}
+
+.cards {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin: 10px;
+  padding: 10px;
+  background-color: rgb(236, 236, 236);
+
+  width: calc(25% - 20px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+.userdetail {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+.cards:hover {
+  transform: scale(1.03);
+}
+
+.userlogo img {
+  width: 100%;
+  border-radius: 50%;
+}
+
+.footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+.footer .link div {
+  display: inline-block;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.footer .link div:hover {
+  color: #555;
+}
+
+@media (max-width: 768px) {
+  .nav .option ul,
+  .nav .colapaps ul {
+    flex-direction: column;
+  }
+  .nav .option ul li,
+  .nav .colapaps ul li {
+    margin: 10px 0;
+  }
+  .nav .clickblock {
+    display: block;
+  }
+  .nav .colapaps {
+    display: flex;
+  }
+  .cards {
+    width: 100%;
+  }
+}
+
+.storydetail {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 5px;
+  /* border: 1px solid #ccc; */
+  /* border-radius: 10px; */
+  /* background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+}
+
+.title {
+  font-family: "Roboto", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.storyline {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #555;
+  line-height: 1.6;
+}

@@ -1,0 +1,40 @@
+<div class="navbar">
+  <li>
+    <img src="/image/321567.png" alt="Logo" />
+  </li>
+  <li><a href="/home">Home</a></li>
+  <li><a href="/home/contact">Contact</a></li>
+  <li><a href="/home/about">About</a></li>
+  <li><a href="/post/createpage">Create Story</a></li>
+  <li>
+    <div class="search">
+      <form action="/home/filter" method="post">
+      <input type="text" name="search" id="search" placeholder="title and catagory" />
+      <button type="submit" >Search</button>
+    </form>
+    </div>
+  </li>
+  <!-- <li><a href="/home/profile"><%= user ? user.name : "" %></a></li> -->
+  <li class="right">
+    <a href="/user/profile/<%= user._id %>"><%= user ? user.name : "" %></a> &nbsp; &nbsp;
+    <a href="/user/profile/<%= user._id %>"
+      ><img
+        src="https://img.freepik.com/free-vector/smiling-young-man-illustration_1308-174669.jpg"
+        alt="user-pic"
+    /></a>
+  </li>
+  <script>
+    console.log("hello");
+    // function refreshOnBack() {
+    //         window.addEventListener('   ', function() {
+    //             // Refresh the page when the back button is pressed
+    //             location.reload();
+    //         });
+    //     }
+        
+    //     // Call the function on page load
+    //     window.onload = refreshOnBack;
+
+   // window.location.replace(window.location.href)
+  </script>
+</div>

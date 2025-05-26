@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Post Uploading Page</title>
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+    <style>
+        #editor {
+            height: 300px;
+        }
+    </style>
+    <style>
+
+      
+      body {
+        font-family: Arial, sans-serif;
+        background-color:  #f0f0f0;
+        margin: 0;
+        /* padding: 20px; */
+      }
+
+      h1 {
+        text-align: center;
+        color: #333;
+      }
+
+      .container {
+        max-width: 90%;
+        margin: auto;
+        background: #ffffff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+      }
+
+      .row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+      }
+
+      .field {
+        flex: 1;
+        margin-right: 10px;
+      }
+
+      .field:last-child {
+        margin-right: 0;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: bold;
+      }
+
+      select,
+      input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+
+      select:focus,
+      input[type="text"]:focus {
+        border-color: #3f51b5;
+        outline: none;
+      }
+
+      .content-of-diary {
+        margin-bottom: 20px;
+      }
+
+      .content-of-diary input[type="text"] {
+        height: 100px; /* Increased height */
+      }
+
+      button {
+        background-color: #3f51b5;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 4px;
+        cursor: pointer;
+        width: 100%;
+        font-size: 16px;
+      }
+
+      button:hover {
+        background-color: #303f9f;
+      }
+
+      ::-webkit-input-placeholder {
+        text-align: center;
+      }
+    </style>
+ <link rel="stylesheet" href="/css/nav.css">
+  </head>
+  <body>
+
+  
+    <form action="/post/update" method="post">
+    <div class="container">
+      <h1>update your Diary</h1>
+
+      <div class="row">
+        <div class="field title-of-story">
+          <label for="title">Title:</label>
+          <input type="text" placeholder="Title of your diary" id="title" class="title" name="title" />
+        </div>
+        <div class="field category-of-story">
+          <label for="category">Category:</label>
+          <select name="categoryList" id="category">
+            <option value="select category">Select Category</option>
+            <option value="Personal Reflection">Personal Reflection</option>
+            <option value="Horror">Horror</option>
+            <option value="Crime">Crime</option>
+            <option value="Drama">Drama</option>
+            <option value="Mystery">Mystery</option>
+            <option value="Fantasy">Fantasy</option>
+            <option value="Self-Help">Self-Help</option>
+            <option value="Spiritual/Religious">Spiritual/Religious</option>
+            <option value="Poetry">Poetry</option>
+            <option value="Romance">Romance</option>
+            <option value="Travel">Travel</option>
+            <option value="Comedy">Comedy</option>
+            <option value="Adventure">Adventure</option>
+            <option value="Non-Fiction">Non-Fiction</option>
+            <option value="Others">Others</option>
+          </select>
+        </div>
+
+        <div class="field visibility-label">
+          <label for="visibility">Visibility Mode:</label>
+          <select name="visibility" id="visibility">
+            <option value="private">Private</option>
+            <option value="public">Public</option>
+          </select>
+        </div>
+
+        <div class="field restriction">
+          <label for="audiance"> Audience Type:</label>
+          <select name="restrictionAge" id="audiance">
+            <option value="true">For Adults Only</option>
+            <option value="false">For All</option>
+          </select>
+        </div>
+
+        
+      </div>
+      <div id="editor"></div>
+      <!-- <button id="getHtml">Get HTML</button> -->
+      <!-- <button id="getText">Get Text</button> -->
+      <!-- <button id="setHtml">Set HTML</button> -->
+      <input type="text" name="content" id="output" style="display: none;">
+      <!-- <pre id="output"></pre> -->
+    <input type="text" name="id" id="" style="display: none;"  value="<%= posts._id %>">
+    <input type="text" name="content" id="output" style="display: none;">
+      <button type="submit" id="getHtml">update Diary Entry</button>
+    </div>
+</form>
+    <script>
+
+       
+          var quill = new Quill('#editor', {
+    theme: 'snow', 
+    modules: {
+        toolbar: [
+            [{ 'font': [] }], 
+            [{ 'size': ['small', false, 'large', 'huge'] }], // Font size dropdown
+            [{ 'header': [1, 2, false] }],
+            ['bold', 'italic', 'underline'],
+            ['blockquote', 'code-block'], // Blockquote
+            [{ 'list': 'ordered' }, { 'list': 'bullet' }],
+            [{ 'color': [] }, { 'background': [] }], // Text and background color
+            [{ 'align': [] }], // Text alignment
+         
+            ['clean'] // Remove formatting button
+        ]
+    }
+});
+
+       
+document.getElementById('visibility').value = "<%= posts.visibility %>";
+let t="";
+    // Set audience type (true/false)
+    console.log();
+    
+     if("<%=posts.restrictionAge%>"=="true"){
+      t= "true";
+     }else{
+      t=  "false";
+     }
+console.log(t);
+
+ document.getElementById("category").value="<%=posts.categoryList[0] %>"
+document.getElementById("title").value="<%=posts.title %>"
+
+
+// Set the value of the select element
+document.getElementById('audiance').value = t;
+
+
+
+    // document.getElementById('audiance').value = t; // 
+
+        
+    var htmlContent = `<%-posts.content%>`;
+    var range = quill.getSelection(); // Get current cursor position
+    
+
+       
+
+    if (range) {
+        // If there is a selection, insert at that position
+        quill.clipboard.dangerouslyPasteHTML(range.index, htmlContent);
+    } else {
+        // If no selection, insert at the end of the document
+        quill.clipboard.dangerouslyPasteHTML(quill.getLength(), htmlContent);
+    }
+
+    document.getElementById('getHtml').addEventListener('click', function() {
+    var html = quill.root.innerHTML;
+
+    // If only contain an empty paragraph, reset to empty string
+    if (html === '<p><br></p>') {
+        html = '';
+    } else {
+        // Clean up the content to remove empty paragraphs
+        html = html.replace(/<p><br><\/p>/g, ''); // removes <p><br></p>
+    }
+    
+    // Set the cleaned HTML to the output field
+    document.getElementById('output').value = html;
+});
+
+
+
+
+    </script>
+  </body>
+</html>

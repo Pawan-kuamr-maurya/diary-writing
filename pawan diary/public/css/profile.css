@@ -1,0 +1,142 @@
+body {
+    font-family: 'Arial', sans-serif; /* Set a base font */
+    background-color: #f4f4f4; /* Light background color */
+    margin: 0;
+    padding: 0;
+}
+
+.contaner {
+    max-width: 900px; /* Maximum width for content */
+    margin: 20px auto; /* Centering the container */
+    padding: 20px; /* Padding inside the container */
+    background-color: #fff; /* White background for main content */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+.userdetal {
+    display: flex; /* Flexbox for layout */
+    align-items: center; /* Center vertically */
+    padding: 15px; /* Padding around user detail section */
+    border-bottom: 1px solid #ddd; /* Divider line */
+}
+
+.profile {
+    width: 80px; /* Width of the profile picture */
+    height: 80px; /* Height of the profile picture */
+    border-radius: 50%; /* Circular image */
+    overflow: hidden; /* Hide overflow */
+    margin-right: 15px; /* Space between profile and text */
+}
+
+.profile img {
+    width: 100%; /* Image fills the profile container */
+    height: 100%; /* Image fills the profile container */
+    object-fit: cover; /* Maintain aspect ratio */
+}
+
+.name {
+    font-size: 24px; /* Font size for the name */
+    font-weight: bold; /* Bold font for visibility */
+    color: #333; /* Dark color */
+    margin: 0; /* Remove default margin */
+}
+
+.gender,
+.age,
+.email {
+    font-size: 16px; /* Font size for details */
+    color: #666; /* Gray color for less emphasis */
+    margin: 5px 0; /* Vertical spacing between details */
+}
+
+.userpost {
+    margin-top: 20px; /* Margin above user posts */
+}
+
+.cards {
+    background-color: #f9f9f9; /* Light background for cards */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 15px; /* Padding inside the cards */
+    margin-bottom: 10px; /* Margin below cards */
+    display: flex; /* Flexbox for layout */
+}
+
+.userdetail {
+    display: flex; /* Flexbox for user details */
+    align-items: center; /* Align items vertically */
+    margin-right: 15px; /* Space between user detail and story */
+}
+
+.userlogo {
+    width: 40px; /* Width of user logo */
+    height: 40px; /* Height of user logo */
+    border-radius: 50%; /* Circular user logo */
+    overflow: hidden; /* Hide overflow */
+    margin-right: 10px; /* Space between logo and username */
+}
+
+.logo-image {
+    width: 100%; /* Fill the logo container */
+    height: 100%; /* Fill the logo container */
+    object-fit: cover; /* Maintain aspect ratio */
+}
+
+.username {
+    font-size: 18px; /* Font size for username */
+    font-weight: bold; /* Bold for username */
+    color: #333; /* Dark text color */
+}
+
+.followers,
+.likes {
+    font-size: 14px; /* Font size for counts */
+    color: #888; /* Lighter gray for less emphasis */
+}
+
+.storydetail {
+    flex-grow: 1; /* Make this take remaining space */
+}
+
+.title {
+    font-size: 20px; /* Font size for story title */
+    font-weight: bold; /* Bold title */
+    color: #333; /* Dark color */
+    margin-top: 0; /* Remove default margin */
+}
+
+.storyline {
+    font-size: 16px; /* Font size for story text */
+    color: #444; /* Slightly darker text */
+    line-height: 1.5; /* Line height for readability */
+    margin-top: 5px; /* Space between title and storyline */
+}
+
+/* Responsive styling */
+@media (max-width: 600px) {
+    .userdetal {
+        flex-direction: column; /* Stack vertically on small screens */
+        align-items: flex-start; /* Left align items */
+    }
+
+    .profile {
+        margin-right: 0; /* Remove margin */
+        margin-bottom: 10px; /* Add margin bottom for spacing */
+    }
+
+    .cards {
+        flex-direction: column; /* Stack card contents */
+    }
+
+    .userdetail {
+        flex-direction: column; /* Stack user detail */
+        align-items: flex-start; /* Align left */
+    }
+}
+
+a{
+    margin: 5px;
+    padding: 0px 10px 0px 10px;
+
+}

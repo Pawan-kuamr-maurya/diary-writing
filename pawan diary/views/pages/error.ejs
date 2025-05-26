@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error Message</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    height: 100vh;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("https://png.pngtree.com/thumb_back/fh260/background/20230512/pngtree-open-diary-with-fountain-pen-image_2506780.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.error-container {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+}
+
+.error-message h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.error-message p {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.retry-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #ff4757;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.retry-button:hover {
+    background: #e84118;
+}
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <div class="error-message">
+            <h1>Oops!</h1>
+            <p><%= main %></p>
+            <p><%- solution %></p>
+            <a href="#" class="retry-button">Go Back</a>
+        </div>
+    </div>
+   
+</body>
+</html>

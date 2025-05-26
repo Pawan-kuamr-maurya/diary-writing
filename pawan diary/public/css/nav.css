@@ -1,0 +1,77 @@
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4; /* Light background */
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #333; /* Dark background */
+  padding: 10px 20px; /* Vertical and horizontal padding */
+}
+.right{
+    display: flex;
+  align-items: center;
+}
+
+.navbar img {
+  width: 40px; /* Adjust size as needed */
+  height: 40px; /* Maintain aspect ratio */
+  border-radius: 50%; /* Make the image round */
+}
+
+.navbar li {
+  list-style: none;
+  margin-left: 20px; /* Space between items */
+}
+
+.navbar a {
+  color: white; /* Link color */
+  text-decoration: none; /* Remove underline */
+  font-weight: bold; /* Make links bold */
+}
+
+.navbar a:hover {
+  text-decoration: none; /* Underline on hover */
+}
+
+.search {
+  display: flex; /* Flexbox for input and button */
+  align-items: center; /* Center vertically */
+}
+
+.search input[type="text"] {
+  padding: 5px;
+  margin-right: 5px; /* Space between input and button */
+  border: none; /* Remove default border */
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+.search button {
+  padding: 5px 10px; /* Vertical and horizontal padding */
+  background-color: #555; /* Button background */
+  color: white; /* Button text color */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer on hover */
+}
+
+.search button:hover {
+  background-color: #777; /* Change color on hover */
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column; /* Stack items */
+    align-items: flex-start; /* Align items to the left */
+  }
+
+  .navbar li {
+    margin: 5px 0; /* Vertical spacing */
+  }
+}
